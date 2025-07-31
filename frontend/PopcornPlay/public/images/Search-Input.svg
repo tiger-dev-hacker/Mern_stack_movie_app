@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <filter id="filter0_i_89001_1594" x="-16" y="-16" width="672" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="12"/>
+      <feGaussianBlur stdDeviation="16"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.807843 0 0 0 0 0.807843 0 0 0 0 0.984314 0 0 0 0.02 0"/>
+      <feBlend mode="normal" in2="shape" result="effect1_innerShadow_89001_1594"/>
+    </filter>
+    <clipPath id="clip0_89001_1594">
+      <rect width="20" height="20" fill="white" transform="translate(20 24)"/>
+    </clipPath>
+  </defs>
+  <g filter="url(#filter0_i_89001_1594)" transform="matrix(1, 0, 0, 1, 6.430339, 195.817493)">
+    <rect width="464.5" height="65.894" rx="8" fill="#0F0D23" style="" y="2.106"/>
+    <g clip-path="url(#clip0_89001_1594)">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M21.875 32.125C21.875 28.6732 24.6732 25.875 28.125 25.875C31.5768 25.875 34.375 28.6732 34.375 32.125C34.375 35.5768 31.5768 38.375 28.125 38.375C24.6732 38.375 21.875 35.5768 21.875 32.125ZM28.125 24C23.6377 24 20 27.6377 20 32.125C20 36.6124 23.6377 40.25 28.125 40.25C30.0309 40.25 31.7835 39.5938 33.1691 38.495L37.4621 42.7879L38.125 43.4509L39.4509 42.125L38.7879 41.4621L34.495 37.1691C35.5938 35.7835 36.25 34.0309 36.25 32.125C36.25 27.6377 32.6124 24 28.125 24Z" fill="#AB8BFF"/>
+    </g>
+  </g>
+</svg>
