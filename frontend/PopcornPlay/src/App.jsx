@@ -3,6 +3,7 @@ import Search from './components/Search';
 import Spinner from './components/Spinner';
 import MovieCard from './components/MovieCard';
 import {useDebounce} from 'react-use'
+import { updateSearchCount } from './appwrite';
 const API_BASE_URL = "https://api.themoviedb.org/3/";
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY; 
@@ -14,17 +15,15 @@ const API_OPTIONS = {
     Authorization: `Bearer ${API_KEY}`, 
   }
 }
-const App = (query = '') => {
+const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [errorMessage, setErrorMessage] = useState(''); 
   const [movieList, setMovieList] = useState([]);
   const [isLoading, setIsLoading] = useState(false); 
-  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(' ');
-
-  //Debounce the search term to prevent making too many AP 
 
   const fetchMovies = async (query = '') => {
-
+    
+  //Debounce the search term to prevent making too many API requests
     setIsLoading(true); 
 
     setErrorMessage(''); 
@@ -50,6 +49,11 @@ const App = (query = '') => {
       }
 
       setMovieList(data.results || []); 
+
+      if (query && data.results.length > 0)
+      {
+        await updateSearchCount(query, data.results[0]); 
+      }
     } catch (error)
     {
       console.error(`Error fetching movie: ${error}`);
@@ -59,8 +63,8 @@ const App = (query = '') => {
     }
   }
   useEffect(() => {
-    fetchMovies(searchTerm); 
-  }, [searchTerm])
+    fetchMovies(searchTerm);
+  }, [searchTerm]);
   return (
     <main>
       <div className="pattern" />
